@@ -1,4 +1,5 @@
 import { AtSign, Plus, XIcon } from 'lucide-react'
+import { Button } from './ui/Button'
 
 interface InviteGuestsModalProps {
   handleCloseGuestModal: () => void
@@ -21,9 +22,9 @@ export function InviteGuestsModal({
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold">Selecionar convidados</h2>
-              <button onClick={handleCloseGuestModal}>
-                <XIcon className="size-5 text-zinc-400" />
-              </button>
+              <Button onClick={handleCloseGuestModal} variant="closeIcon" size="icon">
+                <XIcon className="size-5 text-zinc-400 transition-colors group-hover:text-zinc-300" />
+              </Button>
             </div>
             <p className="text-sm text-zinc-400">
               Os convidados serão notificados por email para confirmar a participação na viagem.
@@ -34,9 +35,9 @@ export function InviteGuestsModal({
             {emailsToInvite.map((email) => (
               <div key={email} className="flex items-center justify-center gap-2 rounded-md bg-zinc-800 px-2.5 py-1.5">
                 <span className="text-zinc-300">{email}</span>
-                <button onClick={() => handleRemoveEmailToInvite(email)} type="button">
-                  <XIcon className="size-5 text-zinc-400" />
-                </button>
+                <Button onClick={() => handleRemoveEmailToInvite(email)} variant="closeIcon" size="icon">
+                  <XIcon className="size-5 text-zinc-400 transition-colors group-hover:text-zinc-300" />
+                </Button>
               </div>
             ))}
           </div>
@@ -56,13 +57,13 @@ export function InviteGuestsModal({
                 className="flex-1 bg-transparent text-lg placeholder-zinc-400 outline-none"
               />
             </div>
-            <button
+            <Button
               type="submit"
               className="group flex items-center gap-2 rounded-lg bg-lime-300 px-5 py-2 font-medium text-lime-950 transition-colors hover:bg-lime-400"
             >
               Convidar
               <Plus className="ease size-5 transition-transform group-hover:rotate-180" />
-            </button>
+            </Button>
           </form>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useState } from 'react'
-import { MapPin, Calendar, ArrowRight, UserRoundPlus, Settings2 } from 'lucide-react'
 import { InviteGuestsModal } from '../../components/invite-guests-modal'
 import { ConfirmTripModal } from '../../components/confirm-trip-modal'
 import { DestinationAndDateStep } from '../../components/destination-and-date-step'

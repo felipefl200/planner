@@ -1,4 +1,5 @@
 import { Mail, Send, User, XIcon } from 'lucide-react'
+import { Button } from './ui/Button'
 
 interface ConfirmTripModalProps {
   handleCloseConfirmModal: () => void
@@ -11,13 +12,13 @@ export function ConfirmTripModal({ handleCloseConfirmModal, createTrip }: Confir
     <>
       <div onClick={handleCloseConfirmModal} className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
       <div className="absolute z-10 flex items-center justify-center">
-        <div className="w-full min-w-[42rem] max-w-2xl space-y-5 rounded-xl bg-zinc-900 px-5 py-6 shadow-shape">
-          <div className="space-y-2">
+        <div className="w-full min-w-[42rem] max-w-2xl space-y-4 rounded-xl bg-zinc-900 px-5 py-6 shadow-shape">
+          <div className="space-y-2 p-2">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Confirmar criação de viagemm</h2>
-              <button onClick={handleCloseConfirmModal}>
-                <XIcon className="size-5 text-zinc-400" />
-              </button>
+              <h2 className="text-lg font-semibold">Confirmar criação de viagem</h2>
+              <Button onClick={handleCloseConfirmModal} variant="closeIcon" size="icon">
+                <XIcon className="size-5 text-zinc-400 transition-colors group-hover:text-zinc-300" />
+              </Button>
             </div>
             <p className="text-sm text-zinc-400">
               Para concluir a criação da viagem para{' '}
@@ -50,14 +51,10 @@ export function ConfirmTripModal({ handleCloseConfirmModal, createTrip }: Confir
                 className="h-14 flex-1 bg-transparent text-lg placeholder-zinc-400 outline-none"
               />
             </div>
-            <button
-              onClick={() => createTrip}
-              type="submit"
-              className="group flex w-full items-center justify-center gap-1 overflow-hidden rounded-lg bg-lime-300 px-5 py-3 font-medium text-lime-950 transition-colors hover:bg-lime-400"
-            >
+            <Button onClick={() => createTrip} variant="primary" size="full">
               Convidar
               <Send className="size-5 transition-transform duration-500 ease-in-out group-hover:-translate-y-10 group-hover:translate-x-20 group-hover:rotate-45" />
-            </button>
+            </Button>
           </form>
         </div>
       </div>
